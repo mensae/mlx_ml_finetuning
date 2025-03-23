@@ -9,7 +9,7 @@ Jinja2==3.1.6
 joblib==1.4.2
 MarkupSafe==3.0.2
 mlx==0.23.2
-mlx-lm==0.22.0
+mlx-lm==0.22.1
 numpy==2.2.4
 packaging==24.2
 pfzy==0.3.4

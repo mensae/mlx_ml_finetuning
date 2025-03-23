@@ -22,6 +22,7 @@ build/
 .vscode/
 *.swp
 *.swo
+.nova
 
 # OS specific files
 .DS_Store
@@ -32,3 +33,13 @@ Thumbs.db
 
 # Log files
 *.log
+
+# Project specific stuff
+models/base/*
+models/adapters/*
+models/fused/*
+data/raw/*
+data/for_train/*
+bot
+eval/*
+!eval/run_eval.py
