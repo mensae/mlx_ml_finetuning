@@ -52,10 +52,8 @@ for streamer_key, messages in tqdm(data.items()):
 	filled_prompt_b = PROMPT_B + messages
 	filled_prompt_q = PROMPT_Q + messages
 	
-	#answer_base_b = run_prompt(filled_prompt_b, model_base, tokenizer_base)
-	#answer_base_q = run_prompt(filled_prompt_q, model_base, tokenizer_base)
-	answer_base_q=""
-	answer_base_b=""
+	answer_base_b = run_prompt(filled_prompt_b, model_base, tokenizer_base)
+	answer_base_q = run_prompt(filled_prompt_q, model_base, tokenizer_base)
 	answer_ft_b = run_prompt(filled_prompt_b, model_ft, tokenizer_ft)
 	answer_ft_q = run_prompt(filled_prompt_q, model_ft, tokenizer_ft)
 	
