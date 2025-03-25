@@ -1,9 +1,7 @@
-[TODO]
-Some boilerplate intro 
+Questa repository è una guida minimale su come effettuare finetuning di un modello LLM locale usando il framework [mlx-lm](https://github.com/ml-explore/mlx-lm).
 
-https://github.com/ml-explore/mlx-lm
-
-Python 3.12.2
+Questo framework è progettato specificamente per funzionare su MacOS con processori Silicon. 
+Se siete interessati a effettuare finetuning su dispositivi Windows o Linux, potete usare la libreria [Unsloth](https://docs.unsloth.ai/get-started/fine-tuning-guide).
 
 # Setup di base
 
@@ -29,25 +27,26 @@ project_root
 │
 ├── data (contiene il dataset)
 │   ├── raw
-│   │   ├── dataset_raw.json
+│   │   ├── messages_v1.json
 │   ├── for_train
-│   │   ├── train.jsonl
-│   │   ├── valid.jsonl
+│	│   ├── v1
+│	│	│	├── train.jsonl
+│	│   │   ├── valid.jsonl
 │
 ├── models (contiene i diversi modelli)
 │   ├── base
 │   │   ├── gemma-3-text-27b-it-4bit/
 │   ├── adapters
-│   │   ├── adapter_gemma-3-text-27b-it-4bit/
+│   │   ├── adapter-v1_gemma-3-text-27b-it-4bit/
 │   ├── fused
-│   │   ├── fused_gemma-3-text-27b-it-4bit/
+│   │   ├── fused-v1_gemma-3-text-27b-it-4bit/
 │
 ├── build_train.py
 ├── fine_tune.sh
 ├── fuse.sh
-├── test_on_valid.py
-├── chat.sh
+├── test_on_validation.py
 ```
+Dato che in questa repository ovviamente non ci sono i modelli né i dati le cartelle data e models sono da creare da parte vostra.
 
 # Fine tuning
 
@@ -80,5 +79,5 @@ La generazione dell'adapter (ossia il vero e proprio fine tuning) viene richiama
 ## Fondere i modelli
 Per il momento abbiamo generato un adapter, che può essere usato per la generazione ma è scomodo. Si può generare direttamente un modello fuso che incolla l'adapter permanentemente al modello base. Questa operazione è svolta dallo script `fuse.sh`. 
 
-Questa guida è semplificata, ci sono altre impostazioni e utilizzi interessanti che potete leggere [qui](https://github.com/ml-explore/mlx-examples/tree/main/lora). 
+Questa guida è semplificata, ci sono altre impostazioni e utilizzi interessanti che potete leggere [qui](https://github.com/ml-explore/mlx-examples/tree/main/lora). Per esempio è possibile usare `mlx_lm.chat` per dialogare direttamente col vostro modello.
 
