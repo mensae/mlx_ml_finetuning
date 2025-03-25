@@ -6,7 +6,7 @@ VER = "v3"
 print(f"Chosen version {VER}.")
 
 def get_valid():
-	with open(f"data/for_train/{version}/valid.jsonl") as f:
+	with open(f"data/for_train/{VER}/valid.jsonl") as f:
 		data = [json.loads(line) for line in f]
 	return data
 
